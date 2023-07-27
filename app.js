@@ -1,13 +1,12 @@
 import express from "express";
-import logger from "morgan";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 
 import indexRouter from "./routes/index.js";
 
 const env = dotenv.config().parsed;
 var app = express();
 
-app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

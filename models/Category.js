@@ -18,6 +18,8 @@ const Schema = mongoose.Schema(
     },
   },
   {
-    timeStamp: { currenTime: () => Math.floor(Date.now() / 1000) },
+    timestamps: { currentTime: () => Math.floor(Date.now() / 1000) },
   }
 );
+
+export default mongoose.model("Category", Schema);

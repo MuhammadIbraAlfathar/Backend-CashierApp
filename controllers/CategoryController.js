@@ -3,6 +3,14 @@ import category from "../models/Category.js";
 const store = async (req, res) => {
   try {
     const title = req.body.title;
+
+    if (!title) {
+      throw {
+        code: 428,
+        message: "Title is required",
+      };
+    }
+
     const newCategory = new category({
       title: title,
     });
